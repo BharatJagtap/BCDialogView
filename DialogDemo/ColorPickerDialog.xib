@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ColorPickerDialog" customModule="DialogDemo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XQh-Mx-Pfa">
+                    <rect key="frame" x="154" y="198" width="293" height="204"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bt9-iG-R01">
+                            <rect key="frame" x="8" y="8" width="134" height="30"/>
+                            <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
+                            <state key="normal" title="Red">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
+                            </state>
+                            <connections>
+                                <action selector="colorButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="3nf-zU-gyC"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tne-hd-ntc">
+                            <rect key="frame" x="151" y="8" width="134" height="30"/>
+                            <color key="backgroundColor" red="0.0" green="0.59094880756578949" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
+                            <state key="normal" title="Green">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
+                            </state>
+                            <connections>
+                                <action selector="colorButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="atX-HG-cAK"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jWz-7h-UD7">
+                            <rect key="frame" x="8" y="46" width="134" height="30"/>
+                            <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
+                            <state key="normal" title="Blue">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
+                            </state>
+                            <connections>
+                                <action selector="colorButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="2rc-15-2nf"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kpw-oU-gC3">
+                            <rect key="frame" x="8" y="87" width="134" height="30"/>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <state key="normal" title="Black">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
+                            </state>
+                            <connections>
+                                <action selector="colorButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="Xkr-mY-bbX"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gdM-aF-y19">
+                            <rect key="frame" x="151" y="87" width="134" height="30"/>
+                            <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <state key="normal" title="Orange">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
+                            </state>
+                            <connections>
+                                <action selector="colorButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="7OT-vl-4va"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b4c-P0-ptw">
+                            <rect key="frame" x="8" y="125" width="134" height="30"/>
+                            <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                            <state key="normal" title="Purple">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
+                            </state>
+                            <connections>
+                                <action selector="colorButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="paB-R0-XF6"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lIT-Tk-vYz">
+                            <rect key="frame" x="150" y="125" width="134" height="30"/>
+                            <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <state key="normal" title="Yellow">
+                                <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </state>
+                            <connections>
+                                <action selector="colorButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="E8Z-6o-vue"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pb7-FM-mjT">
+                            <rect key="frame" x="8" y="163" width="134" height="30"/>
+                            <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <state key="normal" title="Cyan">
+                                <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </state>
+                            <connections>
+                                <action selector="colorButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="W7I-dC-DiJ"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OYy-ju-Dyw">
+                            <rect key="frame" x="151" y="46" width="134" height="30"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
+                            <state key="normal" title="White">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="colorButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="DXl-k1-IDJ"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tpQ-OE-ciX">
+                            <rect key="frame" x="151" y="163" width="134" height="30"/>
+                            <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <state key="normal" title="Magenta">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
+                            </state>
+                            <connections>
+                                <action selector="colorButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="l6t-8m-kQt"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="293" id="3Xq-4x-6hy"/>
+                        <constraint firstAttribute="height" constant="204" id="Seu-YT-vUF"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="93a-7s-cXh">
+                    <rect key="frame" x="426" y="174" width="21" height="25"/>
+                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="21" id="QUj-zk-qx7"/>
+                        <constraint firstAttribute="height" constant="25" id="Zaa-QW-EYT"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                    <state key="normal" title="X">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="cancelClicked:" destination="iN0-l3-epB" eventType="touchUpInside" id="wV3-AV-UpQ"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="93a-7s-cXh" firstAttribute="trailing" secondItem="XQh-Mx-Pfa" secondAttribute="trailing" id="FBf-h0-Dix"/>
+                <constraint firstItem="XQh-Mx-Pfa" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="QYN-qi-yLP"/>
+                <constraint firstItem="XQh-Mx-Pfa" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="TrL-M9-cGp"/>
+                <constraint firstItem="XQh-Mx-Pfa" firstAttribute="top" secondItem="93a-7s-cXh" secondAttribute="bottom" constant="-1" id="sly-K6-AKh"/>
+            </constraints>
+            <connections>
+                <outlet property="contentView" destination="XQh-Mx-Pfa" id="8Dd-0q-lKW"/>
+            </connections>
+        </view>
+    </objects>
+</document>
