@@ -18,8 +18,9 @@ class ViewController: UIViewController , ColorPickerDialogDelegate {
         super.viewDidLoad()
         
         dateDialog = DatePickerDialog.create()
-        dateDialog.buttonUse.addTarget(self, action: #selector(ViewController.useDateClicked(_:)), forControlEvents: .TouchUpInside)
-        dateDialog.buttonCancel.addTarget(self, action: #selector(ViewController.useDateClicked(_:)), forControlEvents: .TouchUpInside)
+        //dateDialog.buttonUse.addTarget(self, action: #selector(useDateClicked(sender:)), for: .touchUpInside)
+        dateDialog.buttonUse.addTarget(self, action: #selector(useDateClicked(sender:)), for: .touchUpInside)
+        dateDialog.buttonCancel.addTarget(self, action: #selector(useDateClicked(sender:)), for: .touchUpInside)
         
         
         colorDialog = ColorPickerDialog.create()
@@ -31,10 +32,10 @@ class ViewController: UIViewController , ColorPickerDialogDelegate {
         
     }
 
-    func useDateClicked(sender : UIButton)  {
+    @objc func useDateClicked(sender : UIButton)  {
         
         let date = dateDialog.datePicker.date
-        buttonDate.setTitle(date.description, forState: .Normal)
+        buttonDate.setTitle(date.description, for: .normal)
         dateDialog.dismiss()
 
     }
@@ -46,10 +47,7 @@ class ViewController: UIViewController , ColorPickerDialogDelegate {
     }
     
     @IBAction func pickUpClicked(sender: AnyObject) {
-    
-        dateDialog.present()
-        
-    
+        dateDialog.present()    
     }
     
     

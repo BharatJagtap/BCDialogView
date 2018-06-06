@@ -17,7 +17,7 @@ class DatePickerDialog: BCDialogView {
     
     static func dialog() -> DatePickerDialog? {
         
-        let viewArr =  NSBundle.mainBundle().loadNibNamed("DatePickerDialog", owner: self, options: nil) as! [DatePickerDialog]
+        let viewArr =  Bundle.main.loadNibNamed("DatePickerDialog", owner: self, options: nil) as! [DatePickerDialog]
         if viewArr.count <= 0 {
             return nil
         }
@@ -25,8 +25,5 @@ class DatePickerDialog: BCDialogView {
             return viewArr[0]
         }
     }
-
-        
-
     
 }

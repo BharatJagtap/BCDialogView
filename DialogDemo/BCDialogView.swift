@@ -27,10 +27,8 @@ class BCDialogView: UIView {
         
         if selectedAnimation == .Fade {
             presentFade(nil)
-        }else if selectedAnimation == .SlideDown {
-          
+        } else if selectedAnimation == .SlideDown {
           presentSlideDown(nil)
-            
         }
         else if selectedAnimation == .SlideUp {
             presentSlideUp(nil)
@@ -41,7 +39,7 @@ class BCDialogView: UIView {
         
     }
     
-    func present(viewController : UIViewController )  {
+    func present(_ viewController : UIViewController )  {
         
         let selectedAnimation = animation ?? BCDialogAnimation.Zoom
         
@@ -59,13 +57,8 @@ class BCDialogView: UIView {
         
     }
     
-    func dismiss()  {
-        
-        dismiss(completion: {})
-        
-    }
-    
-    func dismiss(completion completion : ()->() ) {
+
+    func dismiss(_ completion : @escaping ()->() = { } ) {
         
         let selectedAnimation = animation ?? BCDialogAnimation.Zoom
         
@@ -73,7 +66,7 @@ class BCDialogView: UIView {
             dismissFade(completion: completion)
             
         }else if selectedAnimation == .SlideDown {
-            dismissSlideDown(completion: completion)
+            dismissSlideDown(completion)
             
         }
         else if selectedAnimation == .SlideUp {
@@ -85,92 +78,74 @@ class BCDialogView: UIView {
         
     }
     
-   private func presentZoom(viewController : UIViewController? ) {
+   private func presentZoom(_ viewController : UIViewController? ) {
         
         
-        self.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.4)
-        let window = viewController?.view ?? UIApplication.sharedApplication().keyWindow
+        self.backgroundColor = UIColor.black.withAlphaComponent(0.4)
+        let window = viewController?.view ?? UIApplication.shared.keyWindow
         self.frame = (window?.bounds)!
         self.alpha = 0.0
         window?.addSubview(self)
-        self.transform = CGAffineTransformMakeScale(0.5, 0.5)
+        self.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
         
-        UIView.animateWithDuration(0.3) {
+    UIView.animate(withDuration: 0.3) {
             
             self.alpha = 1.0
-            self.transform = CGAffineTransformMakeScale(1.0, 1.0)
+            self.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
             
         }
 
     }
     
-    private func dismissZoom(completion completion : ()->()) {
+    private func dismissZoom(completion : @escaping ()->()) {
         
-        UIView.animateWithDuration(0.3, animations: {
-            
-            self.transform = CGAffineTransformMakeScale(0.5, 0.5)
+        UIView.animate(withDuration: 0.3, animations: {
+            self.transform = CGAffineTransform(scaleX: 0.5, y : 0.5)
             self.alpha = 0.0
-            
-        }) { (status : Bool ) in
-            
-            
+
+        }) { (status) in
             completion()
             self.removeFromSuperview()
         }
-
     }
     
-    
-    
-    
-    private func presentFade(viewController : UIViewController? ) {
+    private func presentFade(_ viewController : UIViewController? ) {
         
-        
-        self.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.4)
-        let window = viewController?.view ?? UIApplication.sharedApplication().keyWindow
+        self.backgroundColor = UIColor.black.withAlphaComponent(0.4)
+        let window = viewController?.view ?? UIApplication.shared.keyWindow
         self.frame = (window?.bounds)!
         self.alpha = 0.0
         window?.addSubview(self)
         
-        UIView.animateWithDuration(0.3) {
+        UIView.animate( withDuration :0.3) {
             
             self.alpha = 1.0
-            self.transform = CGAffineTransformMakeScale(1.0, 1.0)
-            
+            self.transform = CGAffineTransform(scaleX: 1.0,y: 1.0)
         }
-        
     }
     
-    private func dismissFade(completion completion : ()->()) {
+    private func dismissFade( completion : @escaping ()->()) {
         
-        UIView.animateWithDuration(0.3, animations: {
-            
+        UIView.animate(withDuration : 0.3, animations: {
             self.alpha = 0.0
-            
         }) { (status : Bool ) in
-            
-            
             completion()
             self.removeFromSuperview()
         }
         
     }
 
-    
-    
-    
-    private func presentSlideDown(viewController : UIViewController? ) {
+    private func presentSlideDown(_ viewController : UIViewController? ) {
         
-        
-        self.backgroundColor = UIColor.clearColor()
-        let window = viewController?.view ?? UIApplication.sharedApplication().keyWindow
+        self.backgroundColor = UIColor.clear
+        let window = viewController?.view ?? UIApplication.shared.keyWindow
         self.frame = (window?.bounds)!
         self.alpha = 0.0
         self.center.y -= ( self.frame.height / 2.0 )
         
         window?.addSubview(self)
         
-        UIView.animateWithDuration(0.3) {
+        UIView.animate(withDuration : 0.3) {
             
             self.alpha = 1.0
             self.center = (window?.center)!
@@ -179,14 +154,13 @@ class BCDialogView: UIView {
         
     }
     
-    private func dismissSlideDown(completion completion : ()->()) {
+    private func dismissSlideDown(_ completion : @escaping ()->() = {} ) {
         
-        UIView.animateWithDuration(0.3, animations: {
+        UIView.animate(withDuration: 0.3, animations: {
             self.center.y -= ( self.frame.height / 2.0 )
             self.alpha = 0.0
             
         }) { (status : Bool ) in
-            
             
             completion()
             self.removeFromSuperview()
@@ -196,18 +170,17 @@ class BCDialogView: UIView {
 
     
     
-    private func presentSlideUp(viewController : UIViewController? ) {
+    private func presentSlideUp(_ viewController : UIViewController? ) {
         
-        
-        self.backgroundColor = UIColor.clearColor()
-        let window = viewController?.view ?? UIApplication.sharedApplication().keyWindow
+        self.backgroundColor = UIColor.clear
+        let window = viewController?.view ?? UIApplication.shared.keyWindow
         self.frame = (window?.bounds)!
         self.alpha = 0.0
         self.center.y += ( self.frame.height / 2.0 )
         
         window?.addSubview(self)
         
-        UIView.animateWithDuration(0.3) {
+        UIView.animate(withDuration: 0.3) {
             
             self.alpha = 1.0
             self.center = (window?.center)!
@@ -216,14 +189,13 @@ class BCDialogView: UIView {
         
     }
     
-    private func dismissSlideUp(completion completion : ()->()) {
+    private func dismissSlideUp(completion : @escaping ()->()) {
         
-        UIView.animateWithDuration(0.3, animations: {
+        UIView.animate(withDuration : 0.3, animations: {
             self.center.y += ( self.frame.height / 2.0 )
             self.alpha = 0.0
             
         }) { (status : Bool ) in
-            
             
             completion()
             self.removeFromSuperview()
@@ -234,31 +206,15 @@ class BCDialogView: UIView {
     
     static func create <T : AnyObject >() -> T? {
         
-        let fullName = NSStringFromClass(T.self)
-        let range = fullName.rangeOfString(".", options: .BackwardsSearch)
-        var nibName : String?
+        var nibName = NSStringFromClass(T.self)
+        nibName = nibName.components(separatedBy: ".").last ?? ""
+        let viewArr =  Bundle.main.loadNibNamed(nibName, owner: self, options: nil) as! [T]
         
-        if let range = range {
-            nibName =  fullName.substringFromIndex(range.endIndex)
+        if viewArr.count <= 0 {
+            return nil
         } else {
-            return nil ;
+            return viewArr[0]
         }
-        
-        if let nibName = nibName {
-            
-            let viewArr =  NSBundle.mainBundle().loadNibNamed(nibName, owner: self, options: nil) as! [T]
-            if viewArr.count <= 0 {
-                return nil
-            }
-            else {
-                return viewArr[0]
-            }
-        }
-        
     }
-
-    
-    
-    
 
 }

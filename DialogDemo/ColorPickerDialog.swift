@@ -11,8 +11,8 @@ import UIKit
 
 @objc protocol ColorPickerDialogDelegate {
     
-    optional func colorPickerDialog(didSelectColor color : UIColor) ;
-    optional func colorPickerDialogDidCancel() ;
+    @objc optional func colorPickerDialog(didSelectColor color : UIColor) ;
+    @objc optional func colorPickerDialogDidCancel() ;
 }
 
 
@@ -22,7 +22,7 @@ class ColorPickerDialog : BCDialogView  {
     
     @IBAction func cancelClicked(sender: AnyObject) {
     
-        dismiss(completion: {
+        dismiss({
 
             self.delegate?.colorPickerDialogDidCancel?()
 
@@ -33,7 +33,7 @@ class ColorPickerDialog : BCDialogView  {
     
     @IBAction func colorButtonTapped(sender: UIButton) {
     
-        dismiss(completion: {
+        dismiss({
         
             self.delegate?.colorPickerDialog?(didSelectColor: sender.backgroundColor!)
 
